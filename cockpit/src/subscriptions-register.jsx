@@ -21,22 +21,7 @@ var cockpit = require("cockpit");
 var _ = cockpit.gettext;
 
 var React = require("react");
-
-/* TODO port from cockpit or replace */
-var Select = React.createClass({
-    render: function() {
-        return (
-            <select>{this.props.children}</select>
-        );
-    }
-});
-var SelectEntry = React.createClass({
-    render: function() {
-        return (
-            <option>{this.props.children}</option>
-        );
-    }
-});
+import Select from "./Select/Select.jsx";
 
 function defaultRegisterDialogSettings() {
     return {
@@ -126,9 +111,9 @@ var PatternDialogBody = React.createClass({
                         </td>
                         <td>
                             <Select key='urlSource' onChange={ this.props.onChange.bind(this, 'url') }
-                                    id="subscription-register-url" initial="default">
-                                <SelectEntry data='default' key='default'>{ urlEntries['default'] }</SelectEntry>
-                                <SelectEntry data='custom' key='custom'>{ urlEntries['custom'] }</SelectEntry>
+                                    id="subscription-register-url">
+                                <option value="default">{ urlEntries['default'] }</option>
+                                <option value="custom">{ urlEntries['custom'] }</option>
                             </Select>
                             {customURL}
                         </td>
