@@ -19,7 +19,7 @@ from datetime import datetime
 import types
 import unittest
 
-from test.unit import certdata
+from test.rhsm.unit import certdata
 from rhsm.certificate import create_from_pem, CertificateException
 from rhsm.certificate2 import *
 

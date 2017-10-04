@@ -1,5 +1,8 @@
 [nosetests]
+with-id=True
 with-xvfb=True
 with-randomly=True
 with-yanc=True
+yanc-color=on
+with-xtraceback=True
 attr=!zypper
